@@ -2,6 +2,9 @@
 class Assets {
   Assets._();
 
+  static const String imagesApplePay = 'assets/images/apple_pay.svg';
   static const String imagesCart = 'assets/images/cart.png';
+  static const String imagesCreditCard = 'assets/images/credit_card.svg';
+  static const String imagesPaypal = 'assets/images/paypal.svg';
 
 }
