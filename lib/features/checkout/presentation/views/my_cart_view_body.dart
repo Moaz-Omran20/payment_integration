@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/utils/app_styles.dart';
 
+import '../../../../core/shared_widgets/cart_calculations.dart';
+import '../../../../core/shared_widgets/custom_button.dart';
 import '../../../../generated/assets.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -13,38 +15,28 @@ class MyCartViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(Assets.imagesCart),
-          SizedBox(height: 19,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Order Subtotal",style: AppStyles.styleRegular18,),
-              Text("\$42.97"),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Order Subtotal",style: AppStyles.styleRegular18,),
-              Text("\$42.97"),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Order Subtotal",style: AppStyles.styleRegular18,),
-              Text("\$42.97"),
-            ],
-          ),
+          Expanded(child: Image.asset(Assets.imagesCart)),
+          SizedBox(height: 19),
+          CartCalculations(title: 'Order Subtotal', amount: '\$42.97'),
+          CartCalculations(title: 'Discount', amount: '\$0'),
+          CartCalculations(title: 'Shipping', amount: '\$8'),
           Divider(),
-          SizedBox(height: 15,),
+          SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Total",style: AppStyles.styleSemiBold24,),
-              Text("\$50.97",style: AppStyles.styleSemiBold24,),
+              Text("Total", style: AppStyles.styleSemiBold24),
+              Text("\$50.97", style: AppStyles.styleSemiBold24),
             ],
-          )
+          ),
+          SizedBox(height: 16),
+          Row(
+            children: [
+              Expanded(
+                child: CustomButton(title: "Complete Payment", onTap: () {}),
+              ),
+            ],
+          ),
         ],
       ),
     );
