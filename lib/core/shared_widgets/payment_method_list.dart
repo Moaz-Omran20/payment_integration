@@ -15,21 +15,19 @@ class PaymentMethodItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 400),
-        child: Container(
-          height: 62,
-          width: 103,
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color:  isActive
-                  ? AppStyles.primaryColor :Colors.white),
-              borderRadius: BorderRadiusGeometry.circular(15),
-            ),
+        duration: Duration(milliseconds: 300),
+        height: 62,
+        width: 103,
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color:  isActive
+                ? AppStyles.primaryColor :Colors.white),
+            borderRadius: BorderRadiusGeometry.circular(15),
           ),
-          child: Center(
-            child: SvgPicture.asset(paymentMethodModel.image, height: 24),
-          ),
+        ),
+        child: Center(
+          child: SvgPicture.asset(paymentMethodModel.image, height: 24,fit: BoxFit.scaleDown,),
         ),
       ),
     );
