@@ -9,6 +9,7 @@ abstract class AppStyles {
   static final TextStyle styleRegular18 = TextStyle(
     fontSize: 18,
     color: Colors.black,
+    fontWeight: FontWeight.w500,
   );
   static final TextStyle styleSemiBold24 = TextStyle(
     fontSize: 24,
