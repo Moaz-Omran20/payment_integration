@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/utils/app_styles.dart';
-import 'package:payment_integration/features/checkout/presentation/views/payment_details_view.dart';
-
 import '../../../../core/shared_widgets/cart_calculations.dart';
 import '../../../../core/shared_widgets/custom_button.dart';
+import '../../../../core/shared_widgets/payment_methods_list_view.dart';
 import '../../../../generated/assets.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -34,9 +33,34 @@ class MyCartViewBody extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: CustomButton(title: "Complete Payment", onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentDetailsView(),));
-                }),
+                child: CustomButton(
+                  title: "Complete Payment",
+                  onTap: () {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentDetailsView(),));
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                children: [
+                                  PaymentMethodsListView()
+                                ],
+                              ),
+                              SizedBox(height: 35,),
+                              CustomButton(title: "Continue", onTap: () {
+
+                              },)
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/shared_widgets/custom_button.dart';
+import 'package:payment_integration/core/shared_widgets/payment_methods_list_view.dart';
 import 'package:payment_integration/features/checkout/presentation/views/thank_you_view.dart';
-import '../../../../core/models/payment_method_model.dart';
-import '../../../../core/shared_widgets/payment_method_list.dart';
-import '../../../../generated/assets.dart';
 import 'custom_credit_card.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
@@ -14,13 +12,8 @@ class PaymentDetailsViewBody extends StatefulWidget {
 }
 
 class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
-  final List<PaymentMethodModel> images = [
-    PaymentMethodModel(image: Assets.imagesCreditCard),
-    PaymentMethodModel(image: Assets.imagesPaypal),
-    PaymentMethodModel(image: Assets.imagesApplePay),
-  ];
 
-  int activeIndex = 0;
+
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 
@@ -29,21 +22,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(images.length, (index) {
-              return GestureDetector(
-                onTap: () {
-                  activeIndex = index;
-                  setState(() {});
-                },
-                child: PaymentMethodItem(
-                  paymentMethodModel: images[index],
-                  isActive: index == activeIndex,
-                ),
-              );
-            }),
-          ),
+          child: PaymentMethodsListView(),
         ),
         SliverToBoxAdapter(
           child: CustomCreditCard(
