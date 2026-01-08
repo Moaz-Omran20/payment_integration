@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:payment_integration/core/shared_widgets/custom_credit_card.dart';
+import 'package:payment_integration/core/shared_widgets/custom_payment_details.dart';
 import 'package:payment_integration/core/utils/app_styles.dart';
 
 class ThankYouView extends StatelessWidget {
@@ -26,6 +28,43 @@ class ThankYouView extends StatelessWidget {
                   borderRadius: BorderRadiusGeometry.circular(20),
                 ),
                 color: Color(0xFFD9D9D9),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 44),
+                child: Column(
+                  children: [
+                    SizedBox(height: 16),
+                    Text("Thank You!", style: AppStyles.styleMedium25),
+                    SizedBox(height: 10),
+                    Text(
+                      "Your transaction was successful",
+                      style: AppStyles.styleRegular18,
+                    ),
+                    SizedBox(height: 25),
+                    CustomPaymentDetails(title: "Date", details: "01/24/2023"),
+                    CustomPaymentDetails(title: "Time", details: "10:15 AM"),
+                    CustomPaymentDetails(title: "To", details: "Sam Louis"),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 22),
+                      child: Divider(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 22,
+                        vertical: 10,
+                      ),
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Total", style: AppStyles.styleSemiBold24),
+                          Text("\$50.97", style: AppStyles.styleSemiBold24),
+                        ],
+                      ),
+                    ),
+                    CustomCreditCard(),
+                  ],
+                ),
               ),
             ),
             Positioned(
