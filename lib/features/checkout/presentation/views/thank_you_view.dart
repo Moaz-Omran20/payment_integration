@@ -11,7 +11,9 @@ class ThankYouView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -20,7 +22,7 @@ class ThankYouView extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 45),
         child: Stack(
           clipBehavior: Clip.none,
           children: [
@@ -54,26 +56,27 @@ class ThankYouView extends StatelessWidget {
                     CustomCreditCard(),
                     Spacer(),
                     CustomBarcodeWidget(),
-                    SizedBox(height: MediaQuery.of(context).size.height * .1),
+                    Spacer(),
+                    // SizedBox(height: MediaQuery.of(context).size.height * .1),
                   ],
                 ),
               ),
             ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: MediaQuery.of(context).size.height * .2 + 20,
-              child: Row(
-                children: List.generate(30, (index) {
-                  return Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 3),
-                      child: Container(height: 1, color: Color(0xFFB8B8B8)),
-                    ),
-                  );
-                }),
-              ),
-            ),
+            // Positioned(
+            //   left: 0,
+            //   right: 0,
+            //   bottom: MediaQuery.of(context).size.height * .2 + 20,
+            //   child: Row(
+            //     children: List.generate(30, (index) {
+            //       return Expanded(
+            //         child: Padding(
+            //           padding: const EdgeInsets.symmetric(horizontal: 3),
+            //           child: Container(height: 1, color: Color(0xFFB8B8B8)),
+            //         ),
+            //       );
+            //     }),
+            //   ),
+            // ),
             Positioned(
               top: -44,
               right: 0,
@@ -88,16 +91,16 @@ class ThankYouView extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              left: -20,
-              bottom: MediaQuery.of(context).size.height * .2,
-              child: CircleAvatar(backgroundColor: Colors.white),
-            ),
-            Positioned(
-              right: -20,
-              bottom: MediaQuery.of(context).size.height * .2,
-              child: CircleAvatar(backgroundColor: Colors.white),
-            ),
+            // Positioned(
+            //   left: -20,
+            //   bottom: MediaQuery.of(context).size.height * .2,
+            //   child: CircleAvatar(backgroundColor: Colors.white),
+            // ),
+            // Positioned(
+            //   right: -20,
+            //   bottom: MediaQuery.of(context).size.height * .2,
+            //   child: CircleAvatar(backgroundColor: Colors.white),
+            // ),
           ],
         ),
       ),

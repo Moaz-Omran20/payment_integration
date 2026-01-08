@@ -13,11 +13,11 @@ class PaymentMethodItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: AnimatedContainer(
         duration: Duration(milliseconds: 300),
         height: 62,
-        width: 103,
+        width: MediaQuery.of(context).size.width * .2,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
