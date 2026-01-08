@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/models/payment_method_model.dart';
 import '../../../../core/shared_widgets/payment_method_list.dart';
 import '../../../../generated/assets.dart';
+import 'custom_credit_card.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
   const PaymentDetailsViewBody({super.key});
@@ -39,6 +40,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
             );
           }),
         ),
+        CustomCreditCard()
       ],
     );
   }
