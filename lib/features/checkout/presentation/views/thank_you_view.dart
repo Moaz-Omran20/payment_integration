@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:payment_integration/core/shared_widgets/custom_credit_card.dart';
 import 'package:payment_integration/core/shared_widgets/custom_payment_details.dart';
 import 'package:payment_integration/core/utils/app_styles.dart';
+import '../../../../core/shared_widgets/custom_barcode_widget.dart';
+import '../../../../core/shared_widgets/total_price_widget.dart';
 
 class ThankYouView extends StatelessWidget {
   const ThankYouView({super.key});
@@ -27,7 +29,7 @@ class ThankYouView extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadiusGeometry.circular(20),
                 ),
-                color: Color(0xFFD9D9D9),
+                color: Color(0xFFededed),
               ),
               child: Padding(
                 padding: const EdgeInsets.only(top: 44),
@@ -48,21 +50,11 @@ class ThankYouView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 22),
                       child: Divider(),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 22,
-                        vertical: 10,
-                      ),
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Total", style: AppStyles.styleSemiBold24),
-                          Text("\$50.97", style: AppStyles.styleSemiBold24),
-                        ],
-                      ),
-                    ),
+                    TotalPriceWidget(),
                     CustomCreditCard(),
+                    Spacer(),
+                    CustomBarcodeWidget(),
+                    SizedBox(height: MediaQuery.of(context).size.height * .1),
                   ],
                 ),
               ),
@@ -88,7 +80,7 @@ class ThankYouView extends StatelessWidget {
               left: 0,
               child: CircleAvatar(
                 radius: 44,
-                backgroundColor: Color(0xFFD9D9D9),
+                backgroundColor: Color(0xFFededed),
                 child: CircleAvatar(
                   radius: 33,
                   backgroundColor: AppStyles.primaryColor,
