@@ -27,7 +27,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(images.length, (index) {
-            return InkWell(
+            return GestureDetector(
               onTap: () {
                 activeIndex = index;
                 setState(() {});
