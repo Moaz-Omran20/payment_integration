@@ -17,17 +17,16 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
     PaymentMethodModel(image: Assets.imagesCreditCard),
     PaymentMethodModel(image: Assets.imagesPaypal),
     PaymentMethodModel(image: Assets.imagesApplePay),
-
   ];
 
   int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(images.length, (index) {
               return GestureDetector(
@@ -42,15 +41,20 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
               );
             }),
           ),
-          CustomCreditCard(),
-          SizedBox(height: 35,),
-          Padding(
+        ),
+        SliverToBoxAdapter(child: CustomCreditCard()),
+        SliverToBoxAdapter(child: SizedBox(height: 35)),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButton(title: "Pay", onTap: () {
-            },),
-          )
-        ],
-      ),
+            child: Align(
+              alignment: Alignment.center,
+              child: CustomButton(title: "Pay", onTap: () {}),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
