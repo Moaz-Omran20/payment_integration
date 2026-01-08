@@ -5,9 +5,9 @@ import '../utils/app_styles.dart';
 class CustomButton extends StatelessWidget {
  final String title;
 
-  Function() onTap;
+ final Function() onTap;
 
-  CustomButton({super.key, required this.title, required this.onTap});
+  const CustomButton({super.key, required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            "Complete Payment",
+            title,
             style: AppStyles.styleMedium24.copyWith(fontSize: 22),
           ),
         ),
