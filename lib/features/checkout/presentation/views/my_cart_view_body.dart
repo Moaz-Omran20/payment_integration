@@ -46,14 +46,13 @@ class MyCartViewBody extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Row(
+                                mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  PaymentMethodsListView()
+                                  Expanded(child: PaymentMethodsListView()),
                                 ],
                               ),
-                              SizedBox(height: 35,),
-                              CustomButton(title: "Continue", onTap: () {
-
-                              },)
+                              SizedBox(height: 35),
+                              CustomButton(title: "Continue", onTap: () {}),
                             ],
                           ),
                         );
