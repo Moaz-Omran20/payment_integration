@@ -32,7 +32,7 @@ class StripeService {
   }
 
   Future displayPaymentSheet() async {
-    Stripe.instance.presentPaymentSheet();
+   await Stripe.instance.presentPaymentSheet();
   }
 
   Future<void> makePayment({
