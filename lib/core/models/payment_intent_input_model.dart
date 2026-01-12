@@ -1,15 +1,15 @@
 class PaymentIntentInputModel {
   String amount;
   String currency;
-  String customerId;
+  // String customerId;
 
   PaymentIntentInputModel({
     required this.amount,
     required this.currency,
-    required this.customerId,
+    // required this.customerId,
   });
 
   Map<String, String> toJson() {
-    return {"amount": amount, "currency": currency, "customerId": customerId};
+    return {"amount": amount, "currency": currency/*, "customerId": customerId*/};
   }
 }
