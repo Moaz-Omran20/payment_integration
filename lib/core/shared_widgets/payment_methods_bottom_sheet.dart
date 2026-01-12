@@ -42,6 +42,7 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                       paymentIntentInputModel: PaymentIntentInputModel(
                         amount: "2000",
                         currency: "usd",
+                        customerId: "cus_TmL4M1Q4i64922",
                       ),
                     );
                   },
