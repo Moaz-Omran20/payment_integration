@@ -7,8 +7,13 @@ import '../models/payment_method_model.dart';
 class PaymentMethodsListView extends StatefulWidget {
 
 
+  final ValueChanged<int> onChanged;
 
-  const PaymentMethodsListView({super.key});
+  const PaymentMethodsListView({
+    super.key,
+    required this.onChanged,
+  });
+
 
   @override
   State<PaymentMethodsListView> createState() => _PaymentMethodsListViewState();
@@ -32,6 +37,7 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
           onTap: () {
             activeIndex = index;
             setState(() {});
+            widget.onChanged(index);
           },
           child: PaymentMethodItem(
             paymentMethodModel: images[index],

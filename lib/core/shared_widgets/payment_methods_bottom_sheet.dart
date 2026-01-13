@@ -7,10 +7,20 @@ import 'package:payment_integration/features/checkout/presentation/views/thank_y
 
 import 'custom_button.dart';
 
-class PaymentMethodsBottomSheet extends StatelessWidget {
-  const PaymentMethodsBottomSheet({super.key});
+class PaymentMethodsBottomSheet extends StatefulWidget {
 
+
+  const PaymentMethodsBottomSheet({super.key});
   @override
+  State<PaymentMethodsBottomSheet> createState() => _PaymentMethodsBottomSheetState();
+}
+
+class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
+  int selectedPaymentIndex =0;
+
+
+
+@override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15),
@@ -19,7 +29,9 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
         children: [
           Row(
             mainAxisSize: MainAxisSize.max,
-            children: [Expanded(child: PaymentMethodsListView())],
+            children: [Expanded(child: PaymentMethodsListView(onChanged: (value) {
+               selectedPaymentIndex = value;
+            },))],
           ),
           SizedBox(height: 35),
           BlocConsumer<PaymentCubit, PaymentState>(
@@ -38,13 +50,14 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
                 return CustomButton(
                   title: "Continue",
                   onTap: () {
-                    context.read<PaymentCubit>().makePayment(
+
+                    selectedPaymentIndex ==0?  context.read<PaymentCubit>().makePayment(
                       paymentIntentInputModel: PaymentIntentInputModel(
                         amount: "2000",
                         currency: "usd",
                         // customerId: "cus_TmL4M1Q4i64922",
                       ),
-                    );
+                    ):null;
                   },
                 );
               }
@@ -53,5 +66,4 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
         ],
       ),
     );
-  }
-}
+  }}
