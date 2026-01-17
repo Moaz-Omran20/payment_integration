@@ -83,10 +83,6 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                                     },
                                     "description":
                                         "The payment transaction description.",
-                                    // "payment_options": {
-                                    //   "allowed_payment_method":
-                                    //       "INSTANT_FUNDING_SOURCE"
-                                    // },
                                     "item_list": {
                                       "items": [
                                         {
@@ -103,17 +99,6 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
                                         },
                                       ],
 
-                                      // shipping address is not required though
-                                      //   "shipping_address": {
-                                      //     "recipient_name": "tharwat",
-                                      //     "line1": "Alexandria",
-                                      //     "line2": "",
-                                      //     "city": "Alexandria",
-                                      //     "country_code": "EG",
-                                      //     "postal_code": "21505",
-                                      //     "phone": "+00000000",
-                                      //     "state": "Alexandria"
-                                      //  },
                                     },
                                   },
                                 ],
