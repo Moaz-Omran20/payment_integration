@@ -2,15 +2,22 @@
 
 payment integration using paypal and stripe
 
-## Getting Started
+## ScreenShots
+## Payment screen
+<img src="screenshots/Home.png" width="1080" alt="">
 
-This project is a starting point for a Flutter application.
+## Payment method
+<img src="screenshots/payment method.png" width="1080" alt="">
 
-A few resources to get you started if this is your first Flutter project:
+## Pay by credit card
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="screenshots/credit card .png" width="1080" alt="">
+<img src="screenshots/credit card pay.png" width="1080" alt="">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Pay by paypal
+<img src="screenshots/paypal.png" width="1080" alt="">
+
+## Payment done
+
+<img src="screenshots/process successful.png" width="1080" alt="">
+
